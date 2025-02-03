@@ -29,4 +29,5 @@ Access the app via your browser and start managing tasks! 🎯
 
 
 SCREENSHOT:
-![image](https://github.com/user-attachments/assets/95162c40-1d49-43f1-b09b-16db201e0704)
+![image](https://github.com/user-attachments/assets/4a9f37b2-e363-456b-8150-a2441bbd451f)
+
