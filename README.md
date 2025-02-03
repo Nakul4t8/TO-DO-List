@@ -26,3 +26,7 @@ git clone https://github.com/your-username/todo-list-java.git
 Set up a MySQL database (todo_db) and configure connection settings.
 Deploy the project on Apache Tomcat (NetBeans or Eclipse recommended).
 Access the app via your browser and start managing tasks! 🎯
+
+
+SCREENSHOT:
+![image](https://github.com/user-attachments/assets/95162c40-1d49-43f1-b09b-16db201e0704)
