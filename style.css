@@ -1,0 +1,145 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input[type="text"], select {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Card-style task list */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e4e4e4;
+}
+
+/* Status Colors */
+.pending {
+    color: #FFA500; /* Orange for pending */
+}
+
+.completed {
+    color: #4CAF50; /* Green for completed */
+}
+
+/* Action Buttons */
+button[type="submit"] {
+    background-color: #2196F3;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #1976D2;
+}
+
+form button {
+    background-color: #f44336;
+    padding: 8px 12px;
+}
+
+form button:hover {
+    background-color: #e53935;
+}
+
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Animated transitions */
+table tr, form button {
+    transition: all 0.3s ease;
+}
+
+table tr:hover {
+    transform: scale(1.02);
+}
+
+form button:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"], select, button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

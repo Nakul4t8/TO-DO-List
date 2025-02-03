@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h1>To-Do List</h1>
+
+    <!-- Form to Add Task -->
+    <form action="addTask" method="POST">
+        <input type="text" name="task_name" placeholder="Enter task" required>
+        <select name="status">
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <h2>Tasks:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- The task list will be dynamically inserted here via JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch tasks using AJAX and display them dynamically
+        fetch('listTasks')
+            .then(response => response.json())
+            .then(data => {
+                const taskTableBody = document.querySelector('tbody');
+                data.tasks.forEach(task => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${task.task_name}</td>
+                        <td>${task.status}</td>
+                        <td>
+                            <form action="updateTask" method="POST" style="display:inline;">
+                                <input type="hidden" name="id" value="${task.id}">
+                                <select name="status">
+                                    <option value="pending" ${task.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                    <option value="completed" ${task.status === 'completed' ? 'selected' : ''}>Completed</option>
+                                </select>
+                                <button type="submit">Update</button>
+                            </form>
+                            <form action="deleteTask" method="POST" style="display:inline;">
+                                <input type="hidden" name="id" value="${task.id}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    `;
+                    taskTableBody.appendChild(row);
+                });
+            });
+    </script>
+</body>
+</html>
